@@ -25,6 +25,13 @@ resource "azurerm_virtual_network" "vnet" {
   location            = azurerm_resource_group.myresourcegroup.location
   address_space       = [var.address_space]
   resource_group_name = azurerm_resource_group.myresourcegroup.name
+
+  tags = {
+   source  = "Azure/network/azurerm"
+   version = "3.5.0"
+  # insert the 1 required variable here
+}
+  }
 }
 
 resource "azurerm_subnet" "subnet" {
